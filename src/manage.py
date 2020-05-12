@@ -13,7 +13,7 @@ def main():
     try:
         urlsdict = json.load(open('src/data/url.json', 'r'))
     except FileNotFoundError:
-        print('src/data/urls.json が見当たりません。\nHint: setup.py\n')
+        print('src/data/urls.json が見当たりません。\nHint: setup()\n')
         return
 
     try:
