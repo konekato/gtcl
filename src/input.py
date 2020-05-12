@@ -15,3 +15,14 @@ def period_input():
             return period
         else:
             print('1〜5で、 2 のように入力してね。')
+    
+def url_input():
+    while True:
+        url = input()
+        if not url:
+            return
+        elif validate.is_url(url):
+            return url
+        else:
+            print('enterキーでスキップ')
+            continue

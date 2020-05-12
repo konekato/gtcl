@@ -1,5 +1,6 @@
 import json
 import config
+import input
 
 def setup():
     print('各授業のZOOMのURLを入力してください。（returnキーで飛ばす。）')
@@ -8,7 +9,7 @@ def setup():
         print(dow + "曜日")
         for i in range(5):
             print(str(i+1) + '限目: ')
-            urlsdict[dow][str(i+1)] = input()
+            urlsdict[dow][str(i+1)] = input.url_input()
 
     try:
         with open('src/data/urls.json', 'w') as f:
@@ -16,3 +17,6 @@ def setup():
     except FileNotFoundError:
         print('-------------\nError.\nsrc/data ディレクトリが見つかりません。\nHint: $ mkdir src/data\n-------------')
         return
+    
+
+setup()

@@ -14,12 +14,18 @@ def is_period(validated):
     
     return False
 
+def is_url(validated):
+    if not validated.startswith(config.URL_PREFIX):
+        print(config.URL_PREFIX + ' で始まるURLを登録してください。')
+        return False
+    
+    return True
+
 def url_validation(validated):
     if not validated:
         print('URLが登録されていません。')
         return False
-    elif not validated.startswith(config.URL_PREFIX):
-        print(config.URL_PREFIX + ' で始まるURLを登録してください。')
+    elif not is_url(validated):
         return False
     
     return True
