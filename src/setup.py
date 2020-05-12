@@ -10,5 +10,8 @@ def setup():
             else:
                 urlsdict[dow][str(i+1)] = 'odd'
 
+    with open('src/data/urls.json', 'w') as f:
+        json.dump(urlsdict, f, indent=2, ensure_ascii=False)
+
 if __name__ == '__main__':
     setup()
