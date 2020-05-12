@@ -11,7 +11,7 @@ def main():
     period = input.period_input()
 
     try:
-        urlsdict = json.load(open('src/data/url.json', 'r'))
+        urlsdict = json.load(open('src/data/urls.json', 'r'))
     except FileNotFoundError:
         print('src/data/urls.json が見当たりません。\nHint: setup()\n')
         return

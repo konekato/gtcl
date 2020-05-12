@@ -11,11 +11,8 @@ def setup():
             urlsdict[dow][str(i+1)] = input()
 
     try:
-        with open('src/date/url.json', 'w') as f:
+        with open('src/data/urls.json', 'w') as f:
             json.dump(urlsdict, f, indent=2, ensure_ascii=False)
     except FileNotFoundError:
         print('-------------\nError.\nsrc/data ディレクトリが見つかりません。\nHint: $ mkdir src/data\n-------------')
         return
-    
-
-setup()
