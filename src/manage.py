@@ -1,7 +1,9 @@
+import sys
 import subprocess
 import json
 import validate
 import input
+import setting
 
 def main():
     print('いつが良い？')
@@ -32,4 +34,16 @@ def main():
         return
 
 if __name__ == '__main__':
-    main()
+    args = sys.argv
+
+    if len(args) == 2:
+        if(args[1] == 'run'):
+            main()
+        elif(args[1] == 'setup'):
+            setting.setup()
+        elif(args[1] == 'update'):
+            setting.update()
+        else:
+            print('`$ python(3) manage.py <引数>` にて実行できます。\n引数は以下の通りです。\nrun: 実行\nsetup: 初期セットアップ\nupdate: 設定変更')
+    else:
+        print('`$ python(3) manage.py <引数>` にて実行できます。\n引数は以下の通りです。\nrun: 実行\nsetup: 初期セットアップ\nupdate: 設定変更')
