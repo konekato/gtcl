@@ -44,3 +44,5 @@ urlsdict = {
         '5': '',
         }
     }
+
+URL_PREFIX = 'https://dendai.zoom.us/'
