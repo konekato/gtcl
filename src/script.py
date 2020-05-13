@@ -5,6 +5,35 @@ import json
 import config
 import input
 import validate
+import date
+
+def gtzm():
+    dow = date.dow_today()
+    period = date.period_now()
+    if period is None:
+        print('授業時間外です。')
+        return
+
+    try:
+        urlsdict = json.load(open('src/data/urls.json', 'r'))
+    except FileNotFoundError:
+        print('src/data/urls.json が見当たりません。\nHint: setup()\n')
+        return
+
+    try:
+        url = urlsdict[dow][period]
+    except KeyError:
+        print('dict から key が見つかりません。\n')
+        return
+    if not validate.url_validation(url):
+        return
+
+    command = ['open', url]
+    try:
+        subprocess.check_output(command)
+    except:
+        print('そのようなコマンドは見つかりません。\n')
+        return
 
 def go():
     print('いつが良い？')
@@ -99,3 +128,5 @@ def confirm():
 
     result=tabulate(table, headers, tablefmt="grid")
     print(result)
+
+gtzm()
