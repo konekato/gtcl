@@ -1,4 +1,13 @@
 DOW_LIST = ['月', '火', '水', '木', '金', '土']
+URL_PREFIX_LIST = [
+    'https://dendai.zoom.us/',
+    'https://tdu.box.com/',
+    'https://els.sa.dendai.ac.jp/webclass/'
+    ]
+
+def PRINT_UPL():
+    for prefix in URL_PREFIX_LIST:
+        print('・' + prefix)
 
 urlsdict = {
     '月': {
@@ -44,8 +53,6 @@ urlsdict = {
         '5': '',
         }
     }
-
-URL_PREFIX = 'https://dendai.zoom.us/'
 
 COMMANDLINE_MESSAGE_TEMPLATE = (' $ python(3) manage.py <引数> にて実行できます。\n'
                                 '\n'

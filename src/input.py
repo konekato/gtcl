@@ -1,4 +1,5 @@
 import validate
+import config
 
 def dow_input():
     while True:
@@ -24,5 +25,6 @@ def url_input():
         elif validate.is_url(url):
             return url
         else:
-            print('enterキーでスキップ')
-            continue
+            config.PRINT_UPL()
+            print('で始まるようなURLを登録してください。')
+            print('enterキーでスキップできます。')
