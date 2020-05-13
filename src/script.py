@@ -1,4 +1,5 @@
 from collections import OrderedDict
+from tabulate import tabulate
 import subprocess
 import json
 import config
@@ -70,3 +71,31 @@ def update():
 
     with open('src/data/urls.json', 'w') as f:
         json.dump(urlsdict, f, indent=2, ensure_ascii=False)
+
+# 設定を表で確認できる関数
+def confirm():
+    # header
+    headers = config.DOW_LIST
+    headers.insert(0, '')
+
+    # table
+    table = []
+    try:
+        urlsdict = json.load(open('src/data/urls.json', 'r'))
+    except FileNotFoundError:
+        print('src/data/urls.json が見当たりません。\nHint: setup()\n')
+        return
+
+    for i in range(5):
+        tmp = [str(i+1)]
+        for dow in config.urlsdict:
+            try:
+                url = urlsdict[dow][str(i+1)]
+            except KeyError:
+                print('dict から key が見つかりません。\n')
+                return
+            tmp.append(url)
+        table.append(tmp)
+
+    result=tabulate(table, headers, tablefmt="grid")
+    print(result)
