@@ -46,3 +46,11 @@ urlsdict = {
     }
 
 URL_PREFIX = 'https://dendai.zoom.us/'
+
+COMMANDLINE_MESSAGE_TEMPLATE = (' $ python(3) manage.py <引数> にて実行できます。\n'
+                                '\n'
+                                '引数は以下の通りです。\n'
+                                '\n'
+                                ' run        実行\n'
+                                ' setup      初期セットアップ\n'
+                                ' update     設定変更\n')

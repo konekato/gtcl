@@ -4,6 +4,7 @@ import json
 import validate
 import input
 import setting
+import config
 
 def main():
     print('いつが良い？')
@@ -44,6 +45,6 @@ if __name__ == '__main__':
         elif(args[1] == 'update'):
             setting.update()
         else:
-            print('`$ python(3) manage.py <引数>` にて実行できます。\n引数は以下の通りです。\nrun: 実行\nsetup: 初期セットアップ\nupdate: 設定変更')
+            print(config.COMMANDLINE_MESSAGE_TEMPLATE)
     else:
-        print('`$ python(3) manage.py <引数>` にて実行できます。\n引数は以下の通りです。\nrun: 実行\nsetup: 初期セットアップ\nupdate: 設定変更')
+        print(config.COMMANDLINE_MESSAGE_TEMPLATE)
