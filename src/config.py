@@ -66,3 +66,14 @@ COMMANDLINE_MESSAGE_TEMPLATE = (' $ python(3) manage.py <引数> にて実行で
                                 '\n'
                                 ' confirm    設定確認\n'
                                 ' update     設定変更\n')
+
+import platform
+def COMMAND_OF_OS():
+    if platform.system() == 'Darwin':
+        return 'open'
+    elif platform.system() == 'Windows':
+        return 'start'
+    elif platform.system() == 'Linux':
+        return 'xdg-open'
+    else:
+        return

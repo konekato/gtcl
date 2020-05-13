@@ -28,7 +28,7 @@ def gtzm():
     if not validate.url_validation(url):
         return
 
-    command = ['open', url]
+    command = [config.COMMAND_OF_OS(), url]
     try:
         subprocess.check_output(command)
     except:
@@ -56,7 +56,7 @@ def go():
     if not validate.url_validation(url):
         return
 
-    command = ['open', url]
+    command = [config.COMMAND_OF_OS(), url]
     try:
         subprocess.check_output(command)
     except:
