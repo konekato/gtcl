@@ -2,6 +2,7 @@ import sys
 import script
 import config
 
+
 def main():
     args = sys.argv
 
@@ -20,7 +21,7 @@ def main():
             print(config.COMMANDLINE_MESSAGE_TEMPLATE)
     else:
         print(config.COMMANDLINE_MESSAGE_TEMPLATE)
-    
+
 
 if __name__ == '__main__':
     main()

@@ -7,6 +7,7 @@ import input
 import validate
 import date
 
+
 def gtzm():
     dow = date.dow_today()
     period = date.period_now()
@@ -34,6 +35,7 @@ def gtzm():
     except:
         print('そのようなコマンドは見つかりません。\n')
         return
+
 
 def go():
     print('いつが良い？')
@@ -63,6 +65,7 @@ def go():
         print('そのようなコマンドは見つかりません。\n')
         return
 
+
 def setup():
     print('各授業のZOOMのURLを入力してください。（returnキーで飛ばす。）')
     urlsdict = config.EMPTY_URLS_DICT
@@ -78,6 +81,7 @@ def setup():
     except FileNotFoundError:
         print('-------------\nError.\nsrc/data ディレクトリが見つかりません。\nHint: $ mkdir src/data\n-------------')
         return
+
 
 def update():
     print('設定内容を編集します。')
@@ -95,13 +99,15 @@ def update():
     except FileNotFoundError:
         print('src/data/urls.json が見当たりません。\nHint: setup()\n')
         return
-    
+
     urlsdict[dow][period] = url
 
     with open('src/data/urls.json', 'w') as f:
         json.dump(urlsdict, f, indent=2, ensure_ascii=False)
 
 # 設定を表で確認できる関数
+
+
 def confirm():
     # header
     headers = config.DOW_LIST
@@ -126,5 +132,5 @@ def confirm():
             tmp.append(url)
         table.append(tmp)
 
-    result=tabulate(table, headers, tablefmt="grid")
+    result = tabulate(table, headers, tablefmt="grid")
     print(result)

@@ -1,6 +1,7 @@
 import validate
 import config
 
+
 def dow_input():
     while True:
         dow = input()
@@ -9,6 +10,7 @@ def dow_input():
         else:
             print('月〜土で、 火 のように入力してね。')
 
+
 def period_input():
     while True:
         period = input()
@@ -16,7 +18,8 @@ def period_input():
             return period
         else:
             print('1〜5で、 2 のように入力してね。')
-    
+
+
 def url_input():
     while True:
         url = input()
