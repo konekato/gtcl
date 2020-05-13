@@ -6,7 +6,9 @@ def main():
     args = sys.argv
 
     if len(args) == 2:
-        if(args[1] == 'go'):
+        if(args[1] == 'gtzm'):
+            script.gtzm()
+        elif(args[1] == 'go'):
             script.go()
         elif(args[1] == 'setup'):
             script.setup()

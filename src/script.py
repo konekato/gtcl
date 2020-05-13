@@ -128,5 +128,3 @@ def confirm():
 
     result=tabulate(table, headers, tablefmt="grid")
     print(result)
-
-gtzm()
