@@ -1,4 +1,5 @@
 DOW_LIST = ['月', '火', '水', '木', '金', '土']
+CLASS_TIME_LIST = ['09:10', '11:00', '13:30', '15:20', '17:10', '19:00']
 URL_PREFIX_LIST = [
     'https://dendai.zoom.us/',
     'https://tdu.box.com/',
