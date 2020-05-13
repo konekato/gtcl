@@ -36,7 +36,7 @@ def go():
 
 def setup():
     print('各授業のZOOMのURLを入力してください。（returnキーで飛ばす。）')
-    urlsdict = config.urlsdict
+    urlsdict = config.EMPTY_URLS_DICT
     for dow in config.DOW_LIST:
         print(dow + "曜日")
         for i in range(5):
@@ -88,7 +88,7 @@ def confirm():
 
     for i in range(5):
         tmp = [str(i+1)]
-        for dow in config.urlsdict:
+        for dow in config.EMPTY_URLS_DICT:
             try:
                 url = urlsdict[dow][str(i+1)]
             except KeyError:

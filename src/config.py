@@ -9,7 +9,7 @@ def PRINT_UPL():
     for prefix in URL_PREFIX_LIST:
         print('・' + prefix)
 
-urlsdict = {
+EMPTY_URLS_DICT = {
     '月': {
         '1': '',
         '2': '',
