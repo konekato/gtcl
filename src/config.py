@@ -58,6 +58,8 @@ COMMANDLINE_MESSAGE_TEMPLATE = (' $ python(3) manage.py <引数> にて実行で
                                 '\n'
                                 '引数は以下の通りです。\n'
                                 '\n'
-                                ' go         実行\n'
                                 ' setup      初期セットアップ\n'
+                                '\n'
+                                ' go         実行\n'
+                                ' confirm    設定確認\n'
                                 ' update     設定変更\n')

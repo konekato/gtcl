@@ -12,6 +12,8 @@ def main():
             script.setup()
         elif(args[1] == 'update'):
             script.update()
+        elif(args[1] == 'confirm'):
+            script.confirm()
         else:
             print(config.COMMANDLINE_MESSAGE_TEMPLATE)
     else:
