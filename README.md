@@ -4,7 +4,7 @@ Meaning **go to class**.
 ## 環境構築
 #### リポジトリをクローン
 ```bash
-$ git clone ...
+$ git clone https://github.com/konekato/gtcl.git
 ```
 
 #### pythonの環境を構築
