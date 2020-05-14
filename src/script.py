@@ -8,7 +8,7 @@ import validate
 import date
 
 
-def gtzm():
+def gtcl():
     dow = date.dow_today()
     period = date.period_now()
     if period is None:

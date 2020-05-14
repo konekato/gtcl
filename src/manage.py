@@ -7,8 +7,8 @@ def main():
     args = sys.argv
 
     if len(args) == 2:
-        if(args[1] == 'gtzm'):
-            script.gtzm()
+        if(args[1] == 'gtcl'):
+            script.gtcl()
         elif(args[1] == 'go'):
             script.go()
         elif(args[1] == 'setup'):

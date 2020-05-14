@@ -64,7 +64,7 @@ COMMANDLINE_MESSAGE_TEMPLATE = (' $ python(3) manage.py <引数> にて実行で
                                 '\n'
                                 ' setup      初期セットアップ\n'
                                 '\n'
-                                ' gtzm       実行\n'
+                                ' gtcl       実行\n'
                                 ' go         手動で実行\n'
                                 '\n'
                                 ' confirm    設定確認\n'
