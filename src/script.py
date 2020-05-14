@@ -62,6 +62,8 @@ def go():
     try:
         subprocess.check_output(command)
     except:
+        if config.COMMAND_OF_OS() == 'xdg-open':
+            subprocess.call(['start', url], shell=True)
         print('そのようなコマンドは見つかりません。\n')
         return
 
