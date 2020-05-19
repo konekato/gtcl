@@ -58,7 +58,7 @@ EMPTY_URLS_DICT = {
     }
 }
 
-COMMANDLINE_MESSAGE_TEMPLATE = (' $ python(3) manage.py <引数> にて実行できます。\n'
+COMMANDLINE_MESSAGE_TEMPLATE = ('使用方法: python3 manage.py [引数]\n'
                                 '\n'
                                 '引数は以下の通りです。\n'
                                 '\n'

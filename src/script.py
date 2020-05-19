@@ -67,7 +67,7 @@ def go():
 
 
 def setup():
-    print('各授業のZOOMのURLを入力してください。（returnキーで飛ばす。）')
+    print('各授業のURLを入力してください。（returnキーで飛ばす。）')
     urlsdict = config.EMPTY_URLS_DICT
     for dow in config.DOW_LIST:
         print(dow + "曜日")
@@ -90,7 +90,7 @@ def update():
     dow = input.dow_input()
     print('時限を選択してください。（ 3 のように入力してね。）')
     period = input.period_input()
-    print('更新する授業のZOOMのURLを入力してください。')
+    print('更新する授業のURLを入力してください。')
     url = input.url_input()
 
     try:
