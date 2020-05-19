@@ -1,6 +1,6 @@
 from collections import OrderedDict
 from tabulate import tabulate
-import subprocess
+import webbrowser
 import json
 import config
 import input
@@ -31,9 +31,9 @@ def gtcl():
 
     command = [config.COMMAND_OF_OS(), url]
     try:
-        subprocess.check_output(command)
+        webbrowser.open(url, 2)
     except:
-        print('そのようなコマンドは見つかりません。\n')
+        print('ブラウザエラー\n')
         return
 
 
@@ -60,9 +60,9 @@ def go():
 
     command = [config.COMMAND_OF_OS(), url]
     try:
-        subprocess.check_output(command)
+        webbrowser.open(url, 2)
     except:
-        print('そのようなコマンドは見つかりません。\n')
+        print('ブラウザエラー\n')
         return
 
 
