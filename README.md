@@ -1,4 +1,9 @@
 # GTCL
+[![Python](https://img.shields.io/badge/-Python-F9DC3E.svg?logo=python&style=flat)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-F9DC3E?style=flat)](https://github.com/konekato/gtcl/blob/master/LICENSE)
+[![CodeSize](https://img.shields.io/github/languages/code-size/konekato/gtcl?style=flat&color=F9DC3E)]()
+[![GitHub followers](https://img.shields.io/github/followers/konekato?label=Follow&style=social)](https://github.com/konekato)
+
 Meaning **Go To CLass**.  
 コマンドラインからオンライン授業(へのURL)を開きます。
 
@@ -18,6 +23,7 @@ Meaning **Go To CLass**.
   - [時限の時間を変更する](#時限の時間を変更する)
   - [URLのバリデーションを変更する](#urlのバリデーションを変更する)
   - [エイリアスに設定する](#エイリアスに設定する)
+- [ライセンス](#ライセンス)
 
 ---
 ## 環境
@@ -187,3 +193,7 @@ src/script.py
 alias gtcl='python3 ~/gtcl/src/manage.py gtcl"
 ~省略~
 ```
+
+---
+## ライセンス
+[MIT License](https://github.com/konekato/gtcl/blob/master/LICENSE)の元、提供されています。
