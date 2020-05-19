@@ -29,7 +29,6 @@ def gtcl():
     if not validate.url_validation(url):
         return
 
-    command = [config.COMMAND_OF_OS(), url]
     try:
         webbrowser.open(url, 2)
     except:
@@ -58,7 +57,6 @@ def go():
     if not validate.url_validation(url):
         return
 
-    command = [config.COMMAND_OF_OS(), url]
     try:
         webbrowser.open(url, 2)
     except:
