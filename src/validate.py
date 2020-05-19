@@ -10,7 +10,7 @@ def is_dow(validated):
 
 
 def is_period(validated):
-    for i in range(5):
+    for i in range(config.PERIOD_NUMBER):
         if validated == str(i+1):
             return True
 

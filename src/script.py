@@ -71,7 +71,7 @@ def setup():
     urlsdict = config.EMPTY_URLS_DICT
     for dow in config.DOW_LIST:
         print(dow + "曜日")
-        for i in range(5):
+        for i in range(config.PERIOD_NUMBER):
             print(str(i+1) + '限目: ')
             urlsdict[dow][str(i+1)] = input.url_input()
 
@@ -121,7 +121,7 @@ def confirm():
         print('src/data/urls.json が見当たりません。\nHint: setup()\n')
         return
 
-    for i in range(5):
+    for i in range(config.PERIOD_NUMBER):
         tmp = [str(i+1)]
         for dow in config.EMPTY_URLS_DICT:
             try:

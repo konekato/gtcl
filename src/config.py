@@ -12,6 +12,7 @@ def PRINT_UPL():
     for prefix in URL_PREFIX_LIST:
         print('・' + prefix)
 
+PERIOD_NUMBER = 5
 
 EMPTY_URLS_DICT = {
     '月': {
