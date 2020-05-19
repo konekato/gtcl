@@ -126,11 +126,17 @@ def confirm():
         for dow in config.EMPTY_URLS_DICT:
             try:
                 url = urlsdict[dow][str(i+1)]
+                if url is not None:
+                    element = url[8:28]
+                    element += '...'
+                else:
+                    element = url
             except KeyError:
                 print('dict から key が見つかりません。\n')
                 return
-            tmp.append(url)
+            tmp.append(element)
         table.append(tmp)
 
+    print('\nhttps://は省略')
     result = tabulate(table, headers, tablefmt="grid")
     print(result)
