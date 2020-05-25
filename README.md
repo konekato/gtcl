@@ -30,6 +30,8 @@ Meaning **Go To CLass**.
 - [Python 3.7(.7)](https://www.python.org/)
   - [Pipenv](https://github.com/pypa/pipenv) : python環境を管理してくれるライブラリ
   - [tabulate](https://github.com/astanin/python-tabulate) : コマンドライン上で表を表示してくれるライブラリ
+  
+***※ 現在、Windows Subsystem for Linux には対応しておりません。ご理解のほどよろしくお願いいたします。***
 
 ## 環境構築
 #### リポジトリをクローン
