@@ -179,21 +179,16 @@ URL_PREFIX_LIST = [
 デフォルトで電大のURL。
 
 #### エイリアスに設定する
-1. ホームディレクトリに移動。
-```bash
-mv [clone先]/gtcl ~/
-```
-2. open系のパスを変更
-src/script.py
-```diff
--open('src/data/urls.json')
-+open(os.environ['HOME'] + '/gtcl/src/data/urls.json')
-```
-3. エイリアスの登録
+1. エイリアスの登録
 ~/.bashrc
 ```bash
-alias gtcl='python3 ~/gtcl/src/manage.py gtcl"
+alias gtcl='python3 [clone先]/gtcl/src/manage.py gtcl"
 ~省略~
+```
+
+2. bashrcの適用
+```bash
+source ~/.bashrc
 ```
 
 ---
