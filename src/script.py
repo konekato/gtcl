@@ -1,11 +1,15 @@
 from collections import OrderedDict
 from tabulate import tabulate
+import os
 import webbrowser
 import json
 import config
 import input
 import validate
 import date
+
+directory = os.path.dirname(__file__)
+json_file_path = os.path.join(directory, 'data', 'urls.json')
 
 
 def gtcl():
@@ -16,7 +20,7 @@ def gtcl():
         return
 
     try:
-        urlsdict = json.load(open('src/data/urls.json', 'r'))
+        urlsdict = json.load(open(json_file_path, 'r'))
     except FileNotFoundError:
         print('src/data/urls.json が見当たりません。\nHint: setup()\n')
         return
@@ -44,7 +48,7 @@ def go():
     period = input.period_input()
 
     try:
-        urlsdict = json.load(open('src/data/urls.json', 'r'))
+        urlsdict = json.load(open(json_file_path, 'r'))
     except FileNotFoundError:
         print('src/data/urls.json が見当たりません。\nHint: setup()\n')
         return
@@ -74,7 +78,7 @@ def setup():
             urlsdict[dow][str(i+1)] = input.url_input()
 
     try:
-        with open('src/data/urls.json', 'w') as f:
+        with open(json_file_path, 'w') as f:
             json.dump(urlsdict, f, indent=2, ensure_ascii=False)
     except FileNotFoundError:
         print('-------------\nError.\nsrc/data ディレクトリが見つかりません。\nHint: $ mkdir src/data\n-------------')
@@ -92,7 +96,7 @@ def update():
     url = input.url_input()
 
     try:
-        with open('src/data/urls.json') as f:
+        with open(json_file_path) as f:
             urlsdict = json.load(f, object_pairs_hook=OrderedDict)
     except FileNotFoundError:
         print('src/data/urls.json が見当たりません。\nHint: setup()\n')
@@ -100,7 +104,7 @@ def update():
 
     urlsdict[dow][period] = url
 
-    with open('src/data/urls.json', 'w') as f:
+    with open(json_file_path, 'w') as f:
         json.dump(urlsdict, f, indent=2, ensure_ascii=False)
 
 # 設定を表で確認できる関数
@@ -114,7 +118,7 @@ def confirm():
     # table
     table = []
     try:
-        urlsdict = json.load(open('src/data/urls.json', 'r'))
+        urlsdict = json.load(open(json_file_path, 'r'))
     except FileNotFoundError:
         print('src/data/urls.json が見当たりません。\nHint: setup()\n')
         return
