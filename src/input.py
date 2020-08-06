@@ -8,7 +8,7 @@ def dow_input():
         if validate.is_dow(dow):
             return dow
         else:
-            print('月〜土で、 火 のように入力してね。')
+            print('月〜土で、 火 のように入力してください。')
 
 
 def period_input():
@@ -17,7 +17,7 @@ def period_input():
         if validate.is_period(period):
             return period
         else:
-            print('1〜5で、 2 のように入力してね。')
+            print('1〜5で、 2 のように入力してください。')
 
 
 def url_input():
@@ -29,5 +29,5 @@ def url_input():
             return url
         else:
             config.PRINT_UPL()
-            print('で始まるようなURLを登録してください。')
-            print('enterキーでスキップできます。')
+            print('で始まるようにURLを登録してください。')
+            print('enterキーでスキップできます。\n')

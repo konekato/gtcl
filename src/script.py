@@ -42,9 +42,9 @@ def gtcl():
 
 def go():
     print('いつが良い？')
-    print('曜日を選択してください。（ 火 のように入力してね。）')
+    print('曜日を選択してください。（ 火 のように入力してください。）')
     dow = input.dow_input()
-    print('時限を選択してください。（ 3 のように入力してね。）')
+    print('時限を選択してください。（ 3 のように入力してください。）')
     period = input.period_input()
 
     try:
@@ -69,7 +69,7 @@ def go():
 
 
 def setup():
-    print('各授業のURLを入力してください。（returnキーで飛ばす。）')
+    print('各授業のURLを入力してください。（returnキーでスキップ。）')
     urlsdict = config.EMPTY_URLS_DICT
     for dow in config.DOW_LIST:
         print(dow + "曜日")
@@ -87,10 +87,10 @@ def setup():
 
 def update():
     print('設定内容を編集します。')
-    print('いつが良い？')
-    print('曜日を選択してください。（ 火 のように入力してね。）')
+    print('何曜日の何限のURLを変更しますか？')
+    print('曜日を選択してください。（ 火 のように入力してください。）')
     dow = input.dow_input()
-    print('時限を選択してください。（ 3 のように入力してね。）')
+    print('時限を選択してください。（ 3 のように入力してください。）')
     period = input.period_input()
     print('更新する授業のURLを入力してください。')
     url = input.url_input()
@@ -139,6 +139,6 @@ def confirm():
             tmp.append(element)
         table.append(tmp)
 
-    print('\nhttps://は省略')
+    print('\nhttps:// は省略')
     result = tabulate(table, headers, tablefmt="grid")
     print(result)
