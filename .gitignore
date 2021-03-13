@@ -138,4 +138,6 @@ dmypy.json
 cython_debug/
 
 # Original
-src/data
+data/
+
+.DS_Store
