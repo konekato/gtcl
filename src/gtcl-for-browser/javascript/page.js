@@ -195,7 +195,9 @@ window.registerClassDetail = function () {
     db.insertClassName(classNames);
     db.insertClassUrl(classUrls);
 
-    window.location.href = '/';
+    // for dev
+    // window.location.href = '/';
+    window.location.href = 'https://konekato.github.io/gtcl/';
 
     return true;
 }
