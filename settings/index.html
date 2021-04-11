@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="shortcut icon" href="https://konekato.github.io/assets/img/favicon.ico">
+    <title>Settings | GTCL for browser</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8e4deefb71.js" crossorigin="anonymous"></script>
+
+    <link href="https://konekato.github.io/gtcl/src/gtcl-for-browser/css/common.css" rel="stylesheet">
+    <!-- For dev -->
+    <link href="../src/gtcl-for-browser/css/common.css" rel="stylesheet">
+
+</head>
+
+<body style="box-sizing: border-box;">
+    <header>
+        <h1 class="brand"><i class="fas fa-cog"></i> GTCL for browser <i class="fas fa-cog"></i></h1>
+    </header>
+    <form>
+        <button type="button" id="btn" onclick="return registerClassDetail();"><i class="fas fa-check fa-fw fa-2x"></i></button>
+        <div class="sub-container"><span id="err-msg"></span></div>
+        <table id="table" border="1">
+            <!-- <tr>
+                    <th></th>
+                    <th>月曜日</th>
+                    <th>火曜日</th>
+                    <th>水曜日</th>
+                    <th>木曜日</th>
+                    <th>金曜日</th>
+                    <th>土曜日</th>
+                </tr>
+                <tr>
+                    <td>
+                        <label>1時限</label>
+                        <input type="time"> 〜 <input type="time">
+                    </td>
+                    <td>
+                        <label>講義名</label>
+                        <input type="text">
+                        <label>URL</label>
+                        <input type="text">
+                    </td>
+                </tr> -->
+        </table>
+    </form>
+
+
+    <script type="module" src="https://konekato.github.io/gtcl/src/gtcl-for-browser/javascript/page-edit.js"></script>
+    <!-- For dev -->
+    <script type="module" src="../src/gtcl-for-browser/javascript/page-edit.js"></script>
+</body>
+
+</html>
