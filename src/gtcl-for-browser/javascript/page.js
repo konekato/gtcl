@@ -116,10 +116,6 @@ export function createTableBodyForHome() {
 </tr>
 */
 export function createTableBodyForEdit() {
-    // const classTimes = db.classTimes;
-    // const classNames = db.classNames;
-    // const classUrls = db.classUrls;
-
     const editTable = get("table");
     for (let i = 1; i <= PERIOD; i++) {
         const rowBody = create("tr");
@@ -168,20 +164,25 @@ export function createTableBodyForEdit() {
     }
 }
 
+function showInputError(msg) {
+    const errMsg = get("err-msg");
+    errMsg.innerHTML = msg;
+}
+
 window.registerClassDetail = function () {
     const classTimes = []
     const classNames = []
     const classUrls = []
-    const errMsg = get("err-msg");
+    
     let inputClassEndTimeBefore = "00:00";
     for (let i = 1; i <= PERIOD; i++) {
         const start = get("start-time-"+i).value;
         const end = get("end-time-"+i).value;
         if (start == "" || end == "") {
-            errMsg.innerHTML = i+"時限目の授業時間を入力してください。";
+            showInputError(i+"時限目の授業時間を入力してください。");
             return false;
         } else if (!isValidClassTime(start, end, inputClassEndTimeBefore)) {
-            errMsg.innerHTML = i+"時限目の授業時間が不正です。";
+            showInputError(i+"時限目の授業時間が不正です。");
             return false;
         }
         inputClassEndTimeBefore = end;
@@ -192,15 +193,15 @@ window.registerClassDetail = function () {
             const name = get("name-"+i+"-"+j).value;
             const url = get("url-"+i+"-"+j).value;
             if (name != "" && url == "") {
-                errMsg.innerHTML = DOTW[j]+i+"時限目に講義名しか入力されておりません。";
+                showInputError(DOTW[j]+i+"時限目に講義名しか入力されておりません。");
                 return false;
             } else if (name == "" && url != "") {
-                errMsg.innerHTML = DOTW[j]+i+"時限目に URL しか入力されておりません。";
+                showInputError(DOTW[j]+i+"時限目に URL しか入力されておりません。");
                 return false;
             }
 
             if (url != "" && !url.startsWith('http')) {
-                errMsg.innerHTML = DOTW[j]+i+"時限目の URL が不正です。http で始めてください。";
+                showInputError(DOTW[j]+i+"時限目の URL が不正です。http で始めてください。");
                 return false;
             }
             
@@ -226,24 +227,18 @@ function isValidClassTime(start, end, endBefore) {
     
     // 00:00 で入力されるべきなので、それ以外は false
     if (starts.length != 2 || ends.length != 2) {
-        console.log("here");
         return false;
     }
 
     // split後、数値以外は false
     if (isNaN(start[0]) || isNaN(start[1]) || isNaN(end[0]) || isNaN(end[1])) {
-        console.log("here12");
         return false;
     }
 
     // H: 0~23, M: 0~59
     if ((starts[0] < 0 || starts[0] > 23) || (ends[0] < 0 || ends[0] > 23)) {
-        console.log(starts[0]);
-        console.log(ends[0]);
         return false;
     } else if ((starts[1] < 0 || starts[1] > 59) || (ends[1] < 0 || ends[1] > 59)) {
-        console.log(starts[1]);
-        console.log(ends[1]);
         return false;
     }
 
@@ -253,18 +248,12 @@ function isValidClassTime(start, end, endBefore) {
     const endMinute = toMinute(ends[0], ends[1]);
     // 前授業の終了時間 が、今授業の開始時間 より大きい場合は false
     if (endBeforeMinute > startMinute) {
-        console.log(endBeforeMinute);
-        console.log(startMinute);
         return false;
     }
     // 開始時刻が終了時刻より大きい場合は false
     if (startMinute > endMinute) {
-        console.log(startMinute);
-        console.log(endMinute);
         return false;
     }
-    console.log(startMinute);
-    console.log(endMinute);
 
     return true;
 }
@@ -299,9 +288,9 @@ window.gtclNow = function () {
 }
 
 function isClassNow(nowH, nowM, startH, startM, endH, endM) {
-    const now = nowH * 60 + nowM;
-    const start = startH * 60 + startM;
-    const end = endH * 60 + endM;
+    const now = toMinute(nowH, nowM)
+    const start = toMinute(startH, startM)
+    const end = toMinute(endH, endM)
 
     if (now >= start && now <= end) return true;
     else return false;

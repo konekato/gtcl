@@ -39,6 +39,19 @@ table {
     border-radius: 10px;
     border-collapse: collapse;
 }
+table tr th {
+    width: calc(100% / 7);
+}
+table tr td {
+    width: calc(100% / 7);
+}
+table tr td a {
+    color: #7c63ff;
+    text-decoration: none;
+}
+table tr td a:hover {
+    color: #3c307a;
+}
 
 label {
     display: block;
@@ -55,7 +68,7 @@ input {
 }
 
 #btn {
-    position: absolute;
+    position: fixed;
     right: 50px;
     top: 10px;
 
@@ -75,7 +88,7 @@ input {
 }
 
 #btn-sub {
-    position: absolute;
+    position: fixed;
     left: 50px;
     top: 25px;
 }
@@ -88,4 +101,23 @@ input {
 
 #err-msg {
     color: red;
+}
+
+@media screen and (max-width: 414px) {
+    table {
+        margin: 0 0 70px 0;
+        width: 100vw;
+    }
+
+    #btn {
+        position: fixed;
+        right: 20px;
+        top: calc(100vh - 50px - 20px);
+    }
+
+    #btn-sub {
+        position: fixed;
+        left: 20px;
+        top: calc(100vh - 50px);
+    }
 }
