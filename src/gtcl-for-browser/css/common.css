@@ -85,3 +85,7 @@ input {
 #btn-settings i:hover {
     color: #3c307a;
 }
+
+#err-msg {
+    color: red;
+}

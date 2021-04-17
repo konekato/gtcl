@@ -171,12 +171,15 @@ window.registerClassDetail = function () {
     const classTimes = []
     const classNames = []
     const classUrls = []
+    const errMsg = get("err-msg");
     for (let i = 1; i <= PERIOD; i++) {
 
         const start = get("start-time-"+i).value;
         const end = get("end-time-"+i).value;
         if (start === "" || end === "") {
-            get("err-msg").innerHTML = i+"時限目の授業時間を入力してください。";
+            errMsg.innerHTML = i+"時限目の授業時間を入力してください。";
+            get("start-time-"+i).style.borderColor = "red";
+            get("end-time-"+i) .style.borderColor = "red";
             return false;
         }
         classTimes.push({"period": i, "start": start, "end": end})
@@ -185,6 +188,18 @@ window.registerClassDetail = function () {
             if (j == 0) continue;
             const name = get("name-"+i+"-"+j).value;
             const url = get("url-"+i+"-"+j).value;
+            if (name != "" && url == "") {
+                errMsg.innerHTML = "講義名しか入力されていない項目がございます。";
+                get("name-"+i+"-"+j).style.borderColor = "red";
+                get("url-"+i+"-"+j).style.borderColor = "red";
+                return false;
+            }
+            if (name == "" && url != "") {
+                errMsg.innerHTML = " URL しか入力されていない項目がございます。";
+                get("name-"+i+"-"+j).style.borderColor = "red";
+                get("url-"+i+"-"+j).style.borderColor = "red";
+                return false;
+            }
             
             classNames.push({"period": i, "dotw": j, "name": name})
             classUrls.push({"period": i, "dotw": j, "url": url})
