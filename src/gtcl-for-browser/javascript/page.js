@@ -164,20 +164,25 @@ export function createTableBodyForEdit() {
     }
 }
 
+function showInputError(msg) {
+    const errMsg = get("err-msg");
+    errMsg.innerHTML = msg;
+}
+
 window.registerClassDetail = function () {
     const classTimes = []
     const classNames = []
     const classUrls = []
-    const errMsg = get("err-msg");
+    
     let inputClassEndTimeBefore = "00:00";
     for (let i = 1; i <= PERIOD; i++) {
         const start = get("start-time-"+i).value;
         const end = get("end-time-"+i).value;
         if (start == "" || end == "") {
-            errMsg.innerHTML = i+"時限目の授業時間を入力してください。";
+            showInputError(i+"時限目の授業時間を入力してください。");
             return false;
         } else if (!isValidClassTime(start, end, inputClassEndTimeBefore)) {
-            errMsg.innerHTML = i+"時限目の授業時間が不正です。";
+            showInputError(i+"時限目の授業時間が不正です。");
             return false;
         }
         inputClassEndTimeBefore = end;
@@ -188,15 +193,15 @@ window.registerClassDetail = function () {
             const name = get("name-"+i+"-"+j).value;
             const url = get("url-"+i+"-"+j).value;
             if (name != "" && url == "") {
-                errMsg.innerHTML = DOTW[j]+i+"時限目に講義名しか入力されておりません。";
+                showInputError(DOTW[j]+i+"時限目に講義名しか入力されておりません。");
                 return false;
             } else if (name == "" && url != "") {
-                errMsg.innerHTML = DOTW[j]+i+"時限目に URL しか入力されておりません。";
+                showInputError(DOTW[j]+i+"時限目に URL しか入力されておりません。");
                 return false;
             }
 
             if (url != "" && !url.startsWith('http')) {
-                errMsg.innerHTML = DOTW[j]+i+"時限目の URL が不正です。http で始めてください。";
+                showInputError(DOTW[j]+i+"時限目の URL が不正です。http で始めてください。");
                 return false;
             }
             
