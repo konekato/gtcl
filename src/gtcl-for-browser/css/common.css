@@ -74,14 +74,18 @@ input {
     color: black;
 }
 
-#btn-settings {
+#btn-sub {
     position: absolute;
     left: 50px;
     top: 25px;
 }
-#btn-settings i {
+#btn-sub i {
     color: rgb(98, 92, 109);
 }
-#btn-settings i:hover {
+#btn-sub i:hover {
     color: #3c307a;
+}
+
+#err-msg {
+    color: red;
 }
