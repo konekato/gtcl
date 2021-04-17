@@ -11,6 +11,17 @@ body {
     box-sizing: border-box;
 }
 
+#loading-bar {
+    width: 0;
+    height: 4px;
+    background: #7c63ff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.2s linear 0s;
+}
+
 header {
     margin: 10px 0;
 }
