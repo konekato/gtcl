@@ -287,15 +287,18 @@ window.gtclNow = function () {
     return false;
 }
 
+// isClassNow 今が授業時間内なら true を返す。(開始10分前から)
+// isClassNow()'s arguments should be number.
 function isClassNow(nowH, nowM, startH, startM, endH, endM) {
     const now = toMinute(nowH, nowM)
     const start = toMinute(startH, startM)
     const end = toMinute(endH, endM)
 
-    if (now >= start && now <= end) return true;
+    if (now >= start - 10 && now <= end) return true;
     else return false;
 }
 
+// TODO Number() refactor
 function toMinute(h, m) {
     return Number(h) * 60 + Number(m);
 }
