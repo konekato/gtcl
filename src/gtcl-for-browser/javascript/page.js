@@ -79,9 +79,14 @@ export function createTableBodyForHome() {
                 td.appendChild(div);
             } else {
                 const a = create("a");
-                a.setAttribute("href", classUrls[j][i]);
-                a.setAttribute("target", "_blank");
-                a.setAttribute("rel", "noopener noreferrer");
+                // class URL が登録されていない場合はaタグ機能無効化
+                if (classUrls[j][i] == "") {
+                    a.setAttribute("style", "pointer-events:none;");
+                } else {
+                    a.setAttribute("href", classUrls[j][i]);
+                    a.setAttribute("target", "_blank");
+                    a.setAttribute("rel", "noopener noreferrer");
+                }  
                 a.innerHTML = classNames[j][i];
                 td.appendChild(a);
             }
@@ -192,10 +197,7 @@ window.registerClassDetail = function () {
             if (j == 0) continue;
             const name = get("name-"+i+"-"+j).value;
             const url = get("url-"+i+"-"+j).value;
-            if (name != "" && url == "") {
-                showInputError(DOTW[j]+i+"時限目に講義名しか入力されておりません。");
-                return false;
-            } else if (name == "" && url != "") {
+            if (name == "" && url != "") {
                 showInputError(DOTW[j]+i+"時限目に URL しか入力されておりません。");
                 return false;
             }
