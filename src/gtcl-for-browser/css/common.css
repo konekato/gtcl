@@ -121,3 +121,10 @@ input {
         top: calc(100vh - 230px);
     }
 }
+
+footer {
+    color: #3c307a;
+    position: fixed;
+    left: 5px;
+    bottom: 0px;
+}
