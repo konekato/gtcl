@@ -218,7 +218,7 @@ window.registerClassDetail = function () {
 
     // for dev
     // window.location.href = '/';
-    window.location.href = 'https://yorokov.com/gtcl/';
+    window.location.href = 'https://konekato.github.io/gtcl/';
 
     return true;
 }
